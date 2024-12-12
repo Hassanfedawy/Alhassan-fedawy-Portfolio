@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Download, Github, Linkedin } from 'lucide-react'
+import { Github, Linkedin } from 'lucide-react'
 import AnimatedButton from '@/components/ui/AnimatedButton'
 import AnimatedCard from '@/components/ui/AnimatedCard'
 
@@ -26,9 +26,7 @@ export function Hero(): React.ReactElement {
     }
   ], [])
 
-  const handleDownloadCV = React.useCallback(() => {
-    window.open('/resume.pdf', '_blank')
-  }, [])
+
 
   const handleContactScroll = React.useCallback(() => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
