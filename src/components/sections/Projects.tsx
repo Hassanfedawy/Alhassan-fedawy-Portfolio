@@ -59,14 +59,16 @@ export function Projects() {
                 >
                   <div className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800 transform transition-all duration-300 hover:scale-105">
                     <div className="aspect-video bg-gray-200 dark:bg-gray-700">
-                      <Image
-                        src={project.image}
-                      alt={project.title}
-                        width={500}
-                        height={500}
-                        objectFit='contain'
-                        className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
-                      />
+                    <div className="relative w-full" style={{ paddingBottom: '100%' }}>
+  <Image
+    src={project.image}
+    alt={project.title}
+    layout="fill"
+    objectFit="contain"
+    className="transition-transform duration-500 hover:scale-110"
+  />
+</div>
+
                     </div>
                     <div className="p-6">
                       <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
@@ -83,6 +85,7 @@ export function Projects() {
                       </div>
                       <a
                         href={project.link}
+                        target='_blank'
                         className="inline-block rounded-lg bg-teal-500 px-4 py-2 text-white transition-all hover:bg-teal-600 transform duration-300"
                       >
                         View Project
