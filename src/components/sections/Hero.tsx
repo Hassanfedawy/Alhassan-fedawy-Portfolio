@@ -1,5 +1,3 @@
-//Hero.tsx
-
 'use client'
 
 import React from 'react'
@@ -18,12 +16,12 @@ export function Hero(): React.ReactElement {
   const socialLinks: SocialLink[] = React.useMemo(() => [
     { 
       icon: <Github className="w-6 h-6" />, 
-      href: "https://github.com/hassanmoustafa",
+      href: "https://github.com/Hassanfedawy",
       tooltip: "GitHub Profile"
     },
     { 
       icon: <Linkedin className="w-6 h-6" />, 
-      href: "https://www.linkedin.com/in/hassan-moustafa-dev",
+      href: "https://www.linkedin.com/in/alhassan-fedawy-02a353321/",
       tooltip: "LinkedIn Profile"
     }
   ], [])
@@ -42,14 +40,14 @@ export function Hero(): React.ReactElement {
       className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden"
     >
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 -z-10 animate-gradient-xy" />
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 -z-10 animate-gradient-xy" />
       
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
         {/* Profile Card */}
         <AnimatedCard 
           variant="gradient" 
           hoverEffect="float"
-          className="flex flex-col items-center text-center p-8 space-y-6"
+          className="flex flex-col items-center text-center p-8 space-y-6 bg-white shadow-lg rounded-xl"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -57,17 +55,17 @@ export function Hero(): React.ReactElement {
             transition={{ duration: 0.5 }}
           >
             <div className="relative">
-              <div className="mb-4 h-24 w-24 rounded-full bg-primary-500 shadow-neon dark:shadow-neon-dark flex items-center justify-center">
-                <span className="text-4xl font-bold text-white">HH</span>
+              <div className="mb-4 h-24 w-24 rounded-full bg-gradient-to-r from-teal-500 to-blue-500 shadow-xl flex items-center justify-center">
+                <span className="text-4xl font-bold text-white">AF</span>
               </div>
             </div>
           </motion.div>
           
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Hassan&apos;s Portfolio
+            <h1 className="text-4xl md:text-5xl font-semibold mb-2 text-gray-900">
+              Alhassan Fedawy
             </h1>
-            <p className="text-xl text-muted-foreground mb-4">
+            <p className="text-lg text-gray-700 mb-4">
               Full Stack Developer | Computer Engineer | Building Innovative Web Solutions
             </p>
             
@@ -79,7 +77,7 @@ export function Hero(): React.ReactElement {
                   href={link.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="relative group text-foreground hover:text-primary transition-colors"
+                  className="relative group text-gray-700 hover:text-teal-500 transition-colors"
                 >
                   {link.icon}
                   {/* Hover Info */}
@@ -95,16 +93,16 @@ export function Hero(): React.ReactElement {
         </AnimatedCard>
         
         {/* Hero Content */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           <motion.h2
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            <div className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
               Transforming Ideas into 
-              <span className="text-primary"> Digital Solutions</span>
-            </h2>
+              <span className="text-teal-500"> Digital Solutions</span>
+            </div>
           </motion.h2>
           
           <motion.p
@@ -112,22 +110,14 @@ export function Hero(): React.ReactElement {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="text-lg text-muted-foreground">
+            <div className="text-xl text-gray-700">
               Crafting innovative web applications with cutting-edge technologies. 
               Passionate about creating efficient, scalable, and user-friendly solutions.
-            </p>
+            </div>
           </motion.p>
           
           <div className="flex space-x-4">
-            <AnimatedButton 
-              variant="primary" 
-              size="lg" 
-              animationType="pulse"
-              onClick={handleDownloadCV}
-            >
-              <Download className="mr-2 w-5 h-5" />
-              Download CV
-            </AnimatedButton>
+
             
             <AnimatedButton 
               variant="outline" 

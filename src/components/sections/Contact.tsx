@@ -1,4 +1,3 @@
-//Contact.tsx
 'use client'
 
 import React, { useState, useRef, useCallback } from 'react'
@@ -179,7 +178,7 @@ export function Contact(): React.ReactElement {
 
               <AnimatePresence>
                 {status === 'success' && (
-                  <motion.p
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -187,11 +186,11 @@ export function Contact(): React.ReactElement {
                     <p className="text-green-600 mt-4">
                       Message sent successfully! I&apos;ll get back to you soon.
                     </p>
-                  </motion.p>
+                  </motion.div>
                 )}
 
                 {status === 'error' && (
-                  <motion.p
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -199,7 +198,7 @@ export function Contact(): React.ReactElement {
                     <p className="text-red-600 mt-4">
                       Oops! Something went wrong. Please try again.
                     </p>
-                  </motion.p>
+                  </motion.div>
                 )}
               </AnimatePresence>
             </div>
