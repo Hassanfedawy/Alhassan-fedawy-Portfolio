@@ -1,3 +1,5 @@
+//Hero.tsx
+
 'use client'
 
 import React from 'react'
@@ -5,7 +7,6 @@ import { motion } from 'framer-motion'
 import { Download, Github, Linkedin } from 'lucide-react'
 import AnimatedButton from '@/components/ui/AnimatedButton'
 import AnimatedCard from '@/components/ui/AnimatedCard'
-import Tooltip from '@/components/ui/Tooltip'
 
 type SocialLink = {
   icon: React.ReactNode;
@@ -55,16 +56,16 @@ export function Hero(): React.ReactElement {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div  className="relative">
-            <div className="mb-4 h-24 w-24 rounded-full bg-primary-500 shadow-neon dark:shadow-neon-dark flex items-center justify-center">
-              <span className="text-4xl font-bold text-white">HH</span>
-            </div>
+            <div className="relative">
+              <div className="mb-4 h-24 w-24 rounded-full bg-primary-500 shadow-neon dark:shadow-neon-dark flex items-center justify-center">
+                <span className="text-4xl font-bold text-white">HH</span>
+              </div>
             </div>
           </motion.div>
           
           <div>
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Hassan's Portfolio
+              Hassan&apos;s Portfolio
             </h1>
             <p className="text-xl text-muted-foreground mb-4">
               Full Stack Developer | Computer Engineer | Building Innovative Web Solutions
@@ -73,16 +74,21 @@ export function Hero(): React.ReactElement {
             {/* Social Links */}
             <div className="flex justify-center space-x-4 mt-6">
               {socialLinks.map((link, index) => (
-                <Tooltip key={index} text={link.tooltip} position="bottom">
-                  <a 
-                    href={link.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-foreground hover:text-primary transition-colors"
+                <a 
+                  key={index} 
+                  href={link.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="relative group text-foreground hover:text-primary transition-colors"
+                >
+                  {link.icon}
+                  {/* Hover Info */}
+                  <span
+                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 text-xs text-white bg-black rounded-md opacity-0 group-hover:opacity-100 transition-opacity"
                   >
-                    {link.icon}
-                  </a>
-                </Tooltip>
+                    {link.tooltip}
+                  </span>
+                </a>
               ))}
             </div>
           </div>
@@ -95,9 +101,9 @@ export function Hero(): React.ReactElement {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2  className="text-4xl md:text-5xl font-bold leading-tight">
-            Transforming Ideas into 
-            <span className="text-primary"> Digital Solutions</span>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              Transforming Ideas into 
+              <span className="text-primary"> Digital Solutions</span>
             </h2>
           </motion.h2>
           
@@ -107,8 +113,8 @@ export function Hero(): React.ReactElement {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <p className="text-lg text-muted-foreground">
-            Crafting innovative web applications with cutting-edge technologies. 
-            Passionate about creating efficient, scalable, and user-friendly solutions.
+              Crafting innovative web applications with cutting-edge technologies. 
+              Passionate about creating efficient, scalable, and user-friendly solutions.
             </p>
           </motion.p>
           

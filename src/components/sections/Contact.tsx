@@ -1,21 +1,21 @@
+//Contact.tsx
 'use client'
 
 import React, { useState, useRef, useCallback } from 'react'
-import { motion, AnimatePresence, MotionProps } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import emailjs from '@emailjs/browser'
-import { Send, CheckCircle, AlertTriangle, MapPin, Mail, Phone } from 'lucide-react'
+import { MapPin, Mail, Phone } from 'lucide-react'
 
 import AnimatedButton from '@/components/ui/AnimatedButton'
 import AnimatedCard from '@/components/ui/AnimatedCard'
-import Tooltip from '@/components/ui/Tooltip'
 import { MotionForm } from '@/components/ui/MotionForm'
 
 type ContactStatus = 'idle' | 'sending' | 'success' | 'error'
 
 type ContactInfo = {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  description: string
 }
 
 export function Contact(): React.ReactElement {
@@ -33,95 +33,95 @@ export function Contact(): React.ReactElement {
     return true
   }, [name, email, message])
 
-  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault()
-    
-    if (!validateForm()) return
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+      e.preventDefault()
 
-    setStatus('sending')
+      if (!validateForm()) return
 
-    try {
-      if (formRef.current) {
-        await emailjs.sendForm(
-          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
-          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-          formRef.current,
-          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-        );
-        
-        setStatus('success')
-        setName('')
-        setEmail('')
-        setMessage('')
+      setStatus('sending')
+
+      try {
+        if (formRef.current) {
+          await emailjs.sendForm(
+            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+            formRef.current,
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+          )
+
+          setStatus('success')
+          setName('')
+          setEmail('')
+          setMessage('')
+        }
+      } catch (error) {
+        console.error('Email send error:', error)
+        setStatus('error')
       }
-    } catch (error) {
-      console.error('Email send error:', error)
-      setStatus('error')
-    }
-  }, [validateForm])
+    },
+    [validateForm]
+  )
 
   const contactInfo: ContactInfo[] = [
-    { 
-      icon: MapPin, 
-      title: 'Location', 
-      description: 'Cairo, Egypt' 
+    {
+      icon: MapPin,
+      title: 'Location',
+      description: 'Cairo, Egypt',
     },
-    { 
-      icon: Mail, 
+    {
+      icon: Mail,
       title: 'Email',
-      description: 'alhassanmoustafa577@gmail.com' 
+      description: 'alhassanmoustafa577@gmail.com',
     },
-    { 
-      icon: Phone, 
+    {
+      icon: Phone,
       title: 'Phone',
-      description: '+20 1092606059' 
-    }
+      description: '+20 1092606059',
+    },
   ]
 
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden"
     >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/10 -z-10 animate-gradient-xy" />
-      
+
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
         {/* Contact Information */}
-        <AnimatedCard 
-          variant="gradient" 
+        <AnimatedCard
+          variant="gradient"
           hoverEffect="float"
           className="p-8 space-y-6"
         >
           <h2 className="text-3xl font-bold mb-6 text-center">
             Contact <span className="text-primary">Information</span>
           </h2>
-          
+
           <div className="space-y-4">
             {contactInfo.map((info, index) => (
-              <Tooltip key={index} text={info.title} position="right">
-                <div className="flex items-center space-x-4 p-3 bg-background/50 rounded-lg hover:bg-primary/10 transition-colors">
-                  <info.icon className="w-6 h-6 text-primary" />
-                  <span className="text-muted-foreground">{info.description}</span>
-                </div>
-              </Tooltip>
+              <div
+                key={index}
+                className="flex items-center space-x-4 p-3 bg-background/50 rounded-lg hover:bg-primary/10 transition-colors"
+              >
+                <info.icon className="w-6 h-6 text-primary" />
+                <span className="text-muted-foreground">{info.description}</span>
+              </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-6">
             <p className="text-sm text-muted-foreground">
               Feel free to reach out for collaboration or opportunities!
             </p>
           </div>
         </AnimatedCard>
-        
+
         {/* Contact Form */}
-        <AnimatedCard 
-          variant="elevated" 
-          hoverEffect="glow"
-          className="p-8"
-        >
-          <MotionForm 
+        <AnimatedCard variant="elevated" hoverEffect="glow" className="p-8">
+          <MotionForm
             ref={formRef}
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
@@ -132,10 +132,10 @@ export function Contact(): React.ReactElement {
             <h2 className="text-3xl font-bold mb-6 text-center">
               Send Me a <span className="text-primary">Message</span>
             </h2>
-            
+
             <div className="space-y-4">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -143,9 +143,9 @@ export function Contact(): React.ReactElement {
                 required
                 className="w-full p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all"
               />
-              
-              <input 
-                type="email" 
+
+              <input
+                type="email"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -153,8 +153,8 @@ export function Contact(): React.ReactElement {
                 required
                 className="w-full p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all"
               />
-              
-              <textarea 
+
+              <textarea
                 name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -164,41 +164,40 @@ export function Contact(): React.ReactElement {
                 className="w-full p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all resize-none"
               />
             </div>
-            
+
             <div className="text-center">
-              <AnimatedButton 
-                type="submit" 
-                variant="primary" 
-                size="lg" 
+              <AnimatedButton
+                type="submit"
+                variant="primary"
+                size="lg"
                 animationType="pulse"
                 disabled={status === 'sending'}
                 className="w-full"
               >
                 {status === 'sending' ? 'Sending...' : 'Send Message'}
               </AnimatedButton>
-              
+
               <AnimatePresence>
                 {status === 'success' && (
-                  <motion.p 
+                  <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    
                   >
                     <p className="text-green-600 mt-4">
-                    Message sent successfully! I'll get back to you soon.
+                      Message sent successfully! I&apos;ll get back to you soon.
                     </p>
                   </motion.p>
                 )}
 
                 {status === 'error' && (
-                  <motion.p 
+                  <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                   >
                     <p className="text-red-600 mt-4">
-                    Oops! Something went wrong. Please try again.
+                      Oops! Something went wrong. Please try again.
                     </p>
                   </motion.p>
                 )}

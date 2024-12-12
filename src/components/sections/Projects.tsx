@@ -1,3 +1,6 @@
+//Projects.tsx
+'use client'
+
 import { motion } from 'framer-motion'
 
 const projects = [
@@ -40,8 +43,9 @@ export function Projects() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-6xl"
+          
         >
+          <div className="mx-auto max-w-6xl">
           <h2 className="mb-12 text-center text-3xl font-bold">Featured Projects</h2>
           <div className="grid gap-8 md:grid-cols-2">
             {projects.map((project, index) => (
@@ -51,8 +55,8 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800"
               >
+                <div className="overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800">
                 <div className="aspect-video bg-gray-200 dark:bg-gray-700">
                   {/* Add project image here */}
                 </div>
@@ -78,8 +82,10 @@ export function Projects() {
                     View Project
                   </a>
                 </div>
+             </div>
               </motion.div>
             ))}
+          </div>
           </div>
         </motion.div>
       </div>

@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react';
 import { motion, MotionProps } from 'framer-motion';
 
 // Custom type to merge form and motion props
-type MotionFormProps = Omit<
-  React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>,
-  keyof MotionProps
+type MotionFormProps = React.DetailedHTMLProps<
+  React.FormHTMLAttributes<HTMLFormElement>,
+  HTMLFormElement
 > &
   MotionProps & {
     children?: React.ReactNode;
@@ -19,9 +19,11 @@ export const MotionForm = forwardRef<HTMLFormElement, MotionFormProps>(
     };
 
     return (
-      <motion.form ref={ref} onSubmit={handleSubmit} {...props}>
-        {children}
-      </motion.form>
+      <motion.div>
+        <form ref={ref} onSubmit={handleSubmit} {...props}>
+          {children}
+        </form>
+      </motion.div>
     );
   }
 );
