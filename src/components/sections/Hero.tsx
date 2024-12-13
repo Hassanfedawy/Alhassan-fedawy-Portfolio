@@ -35,18 +35,16 @@ export function Hero(): React.ReactElement {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden mx-auto"
-    >
+      className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden mx-auto"    >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 -z-10 animate-gradient-xy" />
       
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div className="container mx-auto grid md:grid-cols-2 gap-6 sm:gap-10 items-center">
         {/* Profile Card */}
         <AnimatedCard 
           variant="gradient" 
           hoverEffect="float"
-          className="flex flex-col items-center text-center p-8 space-y-6 bg-white shadow-lg rounded-xl"
-        >
+          className="flex flex-col items-center text-center p-4 sm:p-8 space-y-4 sm:space-y-6 w-full"        >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -60,10 +58,10 @@ export function Hero(): React.ReactElement {
           </motion.div>
           
           <div>
-            <h1 className="text-4xl md:text-5xl font-semibold mb-2 text-gray-900">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-2 text-gray-900">
               Alhassan Fedawy
             </h1>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg sm:text-xl text-gray-700 mb-4">
               Full Stack Developer | Computer Engineer | Building Innovative Web Solutions
             </p>
             

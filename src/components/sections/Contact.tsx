@@ -83,17 +83,17 @@ export function Contact(): React.ReactElement {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden mx-auto"
+      className="min-h-screen flex items-center justify-center py-12 sm:py-20 px-4 sm:px-6 relative overflow-hidden mx-auto"
     >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/10 -z-10 animate-gradient-xy" />
 
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div className="container mx-auto grid md:grid-cols-2 gap-6 sm:gap-10 items-center">
         {/* Contact Information */}
         <AnimatedCard
           variant="gradient"
           hoverEffect="float"
-          className="p-8 space-y-6"
+          className="p-4 sm:p-8 space-y-4 sm:space-y-6 w-full"
         >
           <h2 className="text-3xl font-bold mb-6 text-center">
             Contact <span className="text-primary">Information</span>
@@ -119,7 +119,7 @@ export function Contact(): React.ReactElement {
         </AnimatedCard>
 
         {/* Contact Form */}
-        <AnimatedCard variant="elevated" hoverEffect="glow" className="p-8">
+        <AnimatedCard variant="elevated" hoverEffect="glow" className="p-4 sm:p-8 w-full">
           <MotionForm
             ref={formRef}
             onSubmit={handleSubmit}
@@ -140,7 +140,7 @@ export function Contact(): React.ReactElement {
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your Name"
                 required
-                className="w-full p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all"
+                className="w-full p-2 sm:p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all text-base"
               />
 
               <input
@@ -150,7 +150,7 @@ export function Contact(): React.ReactElement {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email"
                 required
-                className="w-full p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all"
+                className="w-full p-2 sm:p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all text-base"
               />
 
               <textarea
@@ -160,7 +160,7 @@ export function Contact(): React.ReactElement {
                 placeholder="Your Message"
                 required
                 rows={4}
-                className="w-full p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+                className="w-full p-2 sm:p-3 border border-input rounded-md focus:ring-2 focus:ring-primary/50 transition-all resize-none text-base"
               />
             </div>
 
