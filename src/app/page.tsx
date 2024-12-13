@@ -1,4 +1,4 @@
-//page.tsx
+// 'page.tsx'
 'use client'
 
 import { Link } from 'react-scroll'
@@ -10,7 +10,8 @@ import { Contact } from '@/components/sections/Contact'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex flex-col">
+      {/* Navigation Bar */}
       <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md dark:bg-gray-900/80">
         <div className="container mx-auto flex justify-center space-x-6 p-4">
           {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((section) => (
@@ -20,13 +21,15 @@ export default function Home() {
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+              className="cursor-pointer text-sm md:text-base text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
             >
               {section}
             </Link>
           ))}
         </div>
       </nav>
+
+      {/* Sections */}
       <Hero />
       <About />
       <Skills />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export function About(): React.ReactElement {
   return (
-    <section id="about" className="py-20 bg-gradient-to-r from-teal-500 to-blue-600">
+    <section id="about" className='mx-auto w-screen py-20 bg-gradient-to-r from-teal-500 to-blue-600'>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
