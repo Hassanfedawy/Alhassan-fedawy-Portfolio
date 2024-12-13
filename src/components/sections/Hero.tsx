@@ -35,7 +35,7 @@ export function Hero(): React.ReactElement {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden mx-auto"
     >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 -z-10 animate-gradient-xy" />

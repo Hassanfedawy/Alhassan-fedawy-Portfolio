@@ -83,7 +83,7 @@ export function Contact(): React.ReactElement {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden mx-auto"
     >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/10 -z-10 animate-gradient-xy" />
