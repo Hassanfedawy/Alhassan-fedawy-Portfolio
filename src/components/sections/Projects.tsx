@@ -14,21 +14,21 @@ const projects = [
   {
     title: 'Fitness & Meal Planner',
     description: 'Web application for generating personalized workout and meal plans.',
-    tech: ['React', 'Node.js', 'MongoDB'],
+    tech: ['React', 'Next.js', 'MongoDB' , 'prisma', 'Tailwind CSS'],
     image: '/projects/befit.png',
     link: 'https://befit1.vercel.app/'
   },
   {
     title: 'Amazon Clone',
     description: 'A frontend clone of Amazon with modern UI and responsive design.',
-    tech: ['React', 'Tailwind CSS'],
+    tech: ['React', 'Next.js', 'Tailwind CSS'],
     image: '/projects/amazon.png',
     link: 'https://amazonclone-rosy-omega.vercel.app/'
   },
   {
     title: 'Airbnb Clone',
     description: 'A pixel-perfect clone of Airbnb\'s frontend interface.',
-    tech: ['React', 'CSS'],
+    tech: ['React', 'Tailwind CSS'],
     image: '/projects/airbnb.png',
     link: 'https://air-bnb-clone-rose.vercel.app/'
   }

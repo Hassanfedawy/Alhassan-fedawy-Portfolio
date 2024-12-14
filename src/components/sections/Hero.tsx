@@ -97,7 +97,7 @@ export function Hero(): React.ReactElement {
           >
             <div className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-gray-900 md:mr-1">
               Transforming Ideas into 
-              <span className="text-teal-500"> Digital Solutions</span>
+              <span className="text-white"> Digital Solutions</span>
             </div>
           </motion.h2>
           

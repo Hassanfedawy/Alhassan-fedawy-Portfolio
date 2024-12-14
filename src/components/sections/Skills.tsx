@@ -7,7 +7,7 @@ const skills = [
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'MongoDB', 'Prisma', 'RESTful APIs', 'Express.js']
+    items: [ 'Next.js','MongoDB', 'Prisma', 'RESTful APIs']
   },
   {
     category: 'Tools & Others',
