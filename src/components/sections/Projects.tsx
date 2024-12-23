@@ -31,6 +31,13 @@ const projects = [
     tech: ['React', 'Tailwind CSS'],
     image: '/projects/airbnb.png',
     link: 'https://air-bnb-clone-rose.vercel.app/'
+  },
+  {
+    title: 'Dr-Mano e-Commerce store',
+    description: 'Dr. Mano\'s e-commerce website is a sleek, user-friendly platform with a calming design, intuitive navigation, and responsive features, providing a professional and welcoming experience for visitors."',
+    tech: ['Next.js', 'Tailwind CSS', 'MongoDB', 'Prisma'],
+    image: '/projects/dr-mano.png',
+    link: 'https://dr-mano.vercel.app/'
   }
 ]
 
